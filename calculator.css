@@ -8,8 +8,8 @@ body {
 }
 
 .calculator {
-    width: 240px;
-    background-color: #100f0f;
+    width: 300px;
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -31,12 +31,13 @@ body {
 }
 
 button {
-    padding: 10px;
+    padding: 15px;
     font-size: 18px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     background-color: #f0f0f0;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 button:hover {
@@ -59,4 +60,13 @@ button.calculate {
 
 button.calculate:hover {
     background-color: #2a7fbc;
+}
+
+button.clear {
+    background-color: #e74c3c;
+    color: white;
+}
+
+button.clear:hover {
+    background-color: #d22c1c;
 }
