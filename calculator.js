@@ -2,7 +2,7 @@ var displayValue = "";
 
 function Display(value) {
     const lastChar = displayValue.slice(-1);
-    const operators = ['+', '-', '*', '/'];
+    const operators = ['+', '-', '*', '/',];
 
     if (operators.includes(lastChar) && operators.includes(value)) {
         displayValue = displayValue.slice(0, -1) + value;
@@ -19,17 +19,22 @@ function clearDisplay() {
 }
 
 function calculateResult() {
-    const displayElement = document.getElementById("display");
-
-    if (displayValue != "") {
+    if (displayValue !== "") {
         try {
             displayValue = eval(displayValue);
             document.getElementById("display").value = displayValue;
         } catch (error) {
-            document.getElementById("display").value = "Dude, that's an error!";
+            document.getElementById("display").value = "Dude, that's an Error!";
         }
-    } else {
-        displayElement.value = "";
+        
+        // Reset displayValue after calculation
+        displayValue = displayValue.toString();
     }
+}
+
+
+function deleteLastCharacter() {
+    displayValue = displayValue.slice(0, -1);
+    document.getElementById("display").value = displayValue;
 }
 
